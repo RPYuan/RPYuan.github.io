@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2019-09-29T12:34:33.223Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/link/index.html</loc>
+    
+    <lastmod>2019-09-29T12:25:21.112Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/gallery/index.html</loc>
+    
+    <lastmod>2019-09-29T12:24:56.968Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2019-09-29T12:22:55.671Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/09/23/PAT---%E4%B9%99---1017---A%E9%99%A4%E4%BB%A5B/</loc>
+    
+    <lastmod>2019-09-23T13:34:06.079Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/09/21/PAT---%E4%B9%99---1008---%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2019-09-21T08:38:14.828Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/09/20/PAT-%E4%B9%99-1003/</loc>
+    
+    <lastmod>2019-09-21T07:32:48.230Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/11/hello-world/</loc>
+    
+    <lastmod>2019-07-11T08:28:14.070Z</lastmod>
+    
+  </url>
+  
+</urlset>
