@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[PAT - 乙 - 1017 - A除以B]]></title>
+    <url>%2F2019%2F09%2F23%2FPAT---%E4%B9%99---1017---A%E9%99%A4%E4%BB%A5B%2F</url>
+    <content type="text"><![CDATA[问题描述：本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。 输入格式：输入在一行中依次给出 A 和 B，中间以 1 空格分隔。 输出格式：在一行中依次输出 Q 和 R，中间以 1 空格分隔。 输入样例：12123456789050987654321 76 7 输出样例：1217636684150141093474 30 6 分析：一看数据范围就知道这是一个高精度的运算，不过除数只是1位数的正整数，难度就降低了很多，只需要模拟除法运算的规则即可。 不过在编写程序中需要考虑到被除数小于除数的情况 代码：1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main()&#123; string a; int b; cin &gt;&gt; a &gt;&gt; b; int len = a.length(); int tmp, flag; tmp = 0; flag = 0; for(int i = 0; i &lt; len; i++) &#123; tmp = (a[i] - '0') + tmp * 10; if(tmp &gt;= b) &#123; cout &lt;&lt; tmp / b; flag = 1; &#125; else if(flag == 1) &#123; cout&lt;&lt;"0"; &#125; tmp = tmp % b; &#125; if(flag == 0) cout&lt;&lt;"0";//被除数小于除数的情况 cout&lt;&lt;" "&lt;&lt;tmp; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT乙级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT - 乙 - 1008 - 数组元素循环右移问题]]></title>
+    <url>%2F2019%2F09%2F21%2FPAT---%E4%B9%99---1008---%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[问题描述：一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A0A1⋯AN-1）变换为（AN-M⋯AN-1A0A1⋯AN-M-1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？ 输入格式：每个输入包含一个测试用例，第1行输入N（1≤N≤100）和M（≥0）；第2行输入N个整数，之间用空格分隔。 输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出 YES，否则输出 NO。在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。 输入样例：126 21 2 3 4 5 6 输出样例：15 6 1 2 3 4 分析：首先需要注意题目并没有给定 M 的最大值，因此不能直接认为M &lt; N，而需要在读入 N 和 M 后令M = M % N，这样就可以保证 M &lt; N,使后面的操作更加简便。这样做的依据是对一个长度为 N 的序列，右移 N 位之后的序列和当前序列是相同的。 方法一：循环法以下列输入样例为例6 21 2 3 4 5 6首先将 N - M 位置的数换到第一个位置，然后 N - M - 1 到 1 位置的数都往后移；接着将 N - M + 1 位置的数换到第二个位置，然后 N - M 到 2 位置的数都往后移；…….直到完成。 方法二：翻转法 这是一种很有技巧性的解法，经过三次翻转即可得到结果。我们设数组长度为N，右移位数为M。 首先将区间（以0位首位）， 【N- M，N - 1】进行翻转。 2.再将区间【0，（N - M - 1）】进行对称翻转。 3.最后将整个区间进行对称翻转。 比如：N = 8， M = 3，数组为1 2 3 4 5 6 7 8 ​ 第一步，将 6 7 8三个数进行翻转， 数组变为1 2 3 4 5 8 7 6 ​ 第二步，将1 2 3 4 5 五个数进行对称翻转，数组变为 5 4 3 2 1 8 7 6 ​ 第三步，将整个数组进行对称翻转，数组变为6 7 8 1 2 3 4 5 代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273循环法：#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main()&#123; int n, m; int a[100]; cin &gt;&gt; n &gt;&gt; m; m = m % n; for(int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; a[i]; &#125; int k; for(int i = m; i &gt;= 1; i--) &#123; k = a[n-i]; for(int j = n-i; j &gt; m-i; j--) &#123; a[j] = a[j-1]; &#125; a[m-i] = k; &#125; for(int i = 0; i &lt; n; i++) &#123; if(i &gt; 0) cout&lt;&lt;" "; cout &lt;&lt; a[i]; &#125; return 0;&#125;翻转法：#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;void reverse(int a[],int l,int h)&#123; int tmp; int mid = (l + h) / 2; for(int i = l; i &lt;= mid; i++) &#123; tmp = a[i]; a[i] = a[l + h - i]; a[l + h - i] = tmp; &#125;&#125;int main()&#123; int n, m; int a[100]; cin &gt;&gt; n &gt;&gt; m; m = m % n; for(int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; a[i]; &#125; reverse(a,n-m,n-1); reverse(a,0,n-m-1); reverse(a,0,n-1); for(int i = 0; i &lt; n; i++) &#123; if(i &gt; 0) cout&lt;&lt;" "; cout &lt;&lt; a[i]; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT乙级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT - 乙 - 1003 - 我要通过]]></title>
+    <url>%2F2019%2F09%2F20%2FPAT-%E4%B9%99-1003%2F</url>
+    <content type="text"><![CDATA[问题描述：“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于 PAT 的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。 得到“答案正确”的条件是： 字符串中必须仅有 P、 A、 T这三种字符，不可以包含其它字符； 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串； 如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a、 b、 c 均或者是空字符串，或者是仅由字母 A 组成的字符串。 现在就请你为 PAT 写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。 输入格式：每个测试输入包含 1 个测试用例。第 1 行给出一个正整数 n (n&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过 100，且不包含空格。 输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出 YES，否则输出 NO。 输入样例：1234567898PATPAATAAPATAAAAPAATAAAAxPATxPTWhateverAPAAATAA 输出样例：12345678YESYESYESYESNONONONO 分析：1234567不要想当然，题目的意思是PAT p前面有0个A,pt之间有1个A，T 后面有0个A, 0*1=0 正确PAAT p前面有0个A,pt之间有2个A，T 后面有0个A, 0*2=0 正确AAPATAA p前面有2个A,pt之间有1个A，T 后面有2个A, 2*1=2 正确AAPAATAAAA p前面有2个A,pt之间有2个A，T 后面有2个A, 2*2=4 正确总结：只能有一个P和T，前面A的个数 * 中间A的个数 = 后面A的个数可以用三个变量，cnt1，cnt2，cnt3将每个部分的A的个数记录下来，最后判断cnt1 * cnt2是否等于cnt3 代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int isTrue(string s)&#123; int i, cnt1, cnt2, cnt3; if(s == "PAT") return 1; if(s == "PT") return 0; cnt1 = cnt2 = cnt3 = i = 0; while(s[i] == 'A') &#123; cnt1++; i++; &#125; if(s[i] == 'P') &#123; i++; &#125; else &#123; return 0; &#125; while(s[i] == 'A') &#123; cnt2++; i++; &#125; if(s[i] == 'T') &#123; i++; &#125; else &#123; return 0; &#125; while(s[i] == 'A') &#123; cnt3++; i++; &#125; if(cnt3 == cnt1 * cnt2) return 1; else return 0;&#125;int main()&#123; int n; string s; cin &gt;&gt; n; int flag; while(n--) &#123; cin &gt;&gt; s; flag = isTrue(s); if(flag == 1) cout&lt;&lt;"YES"&lt;&lt;endl; else cout&lt;&lt;"NO"&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+</search>
