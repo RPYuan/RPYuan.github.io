@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="PAT,map,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="问题描述：本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。">
+<meta name="description" content="问题描述：给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。">
+<meta name="keywords" content="PAT,map">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT - 乙 - 1017 - A除以B">
-<meta property="og:url" content="http://yoursite.com/2019/09/23/PAT---乙---1017---A除以B/index.html">
+<meta property="og:title" content="PAT - 乙 - 1025 - 反转链表">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/PAT---乙---1025---反转链表/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题描述：本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。">
+<meta property="og:description" content="问题描述：给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T11:59:39.618Z">
+<meta property="og:updated_time" content="2019-10-01T14:00:38.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAT - 乙 - 1017 - A除以B">
-<meta name="twitter:description" content="问题描述：本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。">
+<meta name="twitter:title" content="PAT - 乙 - 1025 - 反转链表">
+<meta name="twitter:description" content="问题描述：给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/23/PAT---乙---1017---A除以B/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/01/PAT---乙---1025---反转链表/">
 
 
 
 
 
-  <title>PAT - 乙 - 1017 - A除以B | Hexo</title>
+  <title>PAT - 乙 - 1025 - 反转链表 | Hexo</title>
   
 
 
@@ -286,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/PAT---乙---1017---A除以B/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/PAT---乙---1025---反转链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="拥有大牛梦想的小白">
@@ -303,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT - 乙 - 1017 - A除以B</h1>
+          <h1 class="post-title" itemprop="name headline">PAT - 乙 - 1025 - 反转链表</h1>
         
 
         <div class="post-meta">
@@ -315,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-23T21:34:06+08:00">
-                2019-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-01T22:00:38+08:00">
+                2019-10-01
               </time>
             
 
@@ -375,18 +376,22 @@
       
 
       
-        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a><strong>问题描述</strong>：</h2><p>本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a><strong>问题描述</strong>：</h2><p>给定一个常数 <em>K</em> 以及一个单链表 <em>L</em>，请编写程序将 <em>L</em> 中每 <em>K</em> 个结点反转。例如：给定 <em>L</em> 为 1→2→3→4→5→6，<em>K</em> 为 3，则输出应该为 3→2→1→6→5→4；如果 <em>K</em> 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 <em>K</em> 个元素不反转。</p>
 <a id="more"></a>
 
-<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在一行中依次给出 A 和 B，中间以 1 空格分隔。</p>
-<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中依次输出 Q 和 R，中间以 1 空格分隔。</p>
-<h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">123456789050987654321 7</span><br><span class="line">6 7</span><br></pre></td></tr></table></figure>
+<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>每个输入包含 1 个测试用例。每个测试用例第 1 行给出第 1 个结点的地址、结点总个数正整数 <em>N</em> (≤105)、以及正整数 <em>K</em> (≤<em>N</em>)，即要求反转的子链结点的个数。结点的地址是 5 位非负整数，NULL 地址用 −1 表示。</p>
+<p>接下来有 <em>N</em> 行，每行格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Address Data Next</span><br></pre></td></tr></table></figure>
 
-<h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">17636684150141093474 3</span><br><span class="line">0 6</span><br></pre></td></tr></table></figure>
+<p>其中 <code>Address</code> 是结点地址，<code>Data</code> 是该结点保存的整数数据，<code>Next</code> 是下一结点的地址。</p>
+<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>对每个测试用例，顺序输出反转后的链表，其上每个结点占一行，格式与输入相同。</p>
+<h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">00100 6 4</span><br><span class="line">00000 4 99999</span><br><span class="line">00100 1 12309</span><br><span class="line">68237 6 -1</span><br><span class="line">33218 3 00000</span><br><span class="line">99999 5 68237</span><br><span class="line">12309 2 33218</span><br></pre></td></tr></table></figure>
 
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a><strong>分析：</strong></h2><p>一看数据范围就知道这是一个高精度的运算，不过除数只是1位数的正整数，难度就降低了很多，只需要<strong>模拟除法运算</strong>的规则即可。</p>
-<p>不过在编写程序中需要考虑到<strong>被除数小于除数的情况</strong></p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> a;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">	<span class="keyword">int</span> len = a.length();</span><br><span class="line">	<span class="keyword">int</span> tmp, flag;</span><br><span class="line">	tmp = <span class="number">0</span>;</span><br><span class="line">	flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp = (a[i] - <span class="string">'0'</span>) + tmp * <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(tmp &gt;= b)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; tmp / b;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(flag == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		tmp = tmp % b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag == <span class="number">0</span>) <span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>;<span class="comment">//被除数小于除数的情况</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>&lt;&lt;tmp;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">00000 4 33218</span><br><span class="line">33218 3 12309</span><br><span class="line">12309 2 00100</span><br><span class="line">00100 1 99999</span><br><span class="line">99999 5 68237</span><br><span class="line">68237 6 -1</span><br></pre></td></tr></table></figure>
+
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a><strong>分析：</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">思路： </span><br><span class="line">如何实现链表的反转呢？难点在于每次反转next都要改变，这就很头疼了，其实我们只需要将连接好的链表按顺序存到一个顺序表中，反转顺序，本身的“地址“不变，next刚好就是顺序表下一个元素的“地址”，只是最后一个的next为NULL（-1）；</span><br><span class="line"></span><br><span class="line">注：要考虑第一个元素的next值为-1的情况</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> ads, data, next;</span><br><span class="line">&#125;node[<span class="number">100000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, k, str, start;</span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, Node&gt; m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; start &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;str);         <span class="comment">//输入结点数据</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;m[str].data, &amp;m[str].next);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		node[i] = &#123; start,m[start].data ,<span class="number">0</span> &#125;;<span class="comment">//通过map直接索引start将链表按顺序转到node数组里面</span></span><br><span class="line">		start = m[start].next;</span><br><span class="line">		<span class="keyword">if</span> (start == <span class="number">-1</span>)     <span class="comment">//当start被赋值为-1的时候，链表就结束了，更新n的值，测试点6</span></span><br><span class="line">			n = i + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> ((i + <span class="number">1</span>) % k == <span class="number">0</span>)</span><br><span class="line">			reverse(node + i + <span class="number">1</span> - k, node + i + <span class="number">1</span>);   <span class="comment">//反转</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;   <span class="comment">//输出</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%05d %d "</span>, node[i].ads, node[i].data);</span><br><span class="line">		<span class="keyword">if</span> (i != n - <span class="number">1</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%05d\n"</span>, node[i + <span class="number">1</span>].ads);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"-1"</span>);  <span class="comment">//最后一个结点next为-1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -415,6 +420,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
+          
+            <a href="/tags/map/" rel="tag"><i class="fa fa-tag"></i> map</a>
+          
+        </div>
+      
 
       
       
@@ -424,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/21/PAT---乙---1008---数组元素循环右移问题/" rel="next" title="PAT - 乙 - 1008 - 数组元素循环右移问题">
-                <i class="fa fa-chevron-left"></i> PAT - 乙 - 1008 - 数组元素循环右移问题
+              <a href="/2019/09/23/PAT---乙---1017---A除以B/" rel="next" title="PAT - 乙 - 1017 - A除以B">
+                <i class="fa fa-chevron-left"></i> PAT - 乙 - 1017 - A除以B
               </a>
             
           </div>
@@ -433,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/01/PAT---乙---1025---反转链表/" rel="prev" title="PAT - 乙 - 1025 - 反转链表">
-                PAT - 乙 - 1025 - 反转链表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
